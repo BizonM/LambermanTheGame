@@ -3,7 +3,8 @@ using UnityEngine;
 public class BorderShop : MonoBehaviour
 {
     [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private InventoryScriptableObject playerInventory;
+    private int moje;
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if (collisionInfo.collider.CompareTag("Player"))

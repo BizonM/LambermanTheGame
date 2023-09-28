@@ -1,19 +1,20 @@
 using UnityEngine;
-
-public class SpeedShop : MonoBehaviour
-{
-    [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Inventory playerInventory;
-    [SerializeField] private Shop speedShop;
-    private void OnCollisionEnter2D(Collision2D collisionInfo)
+public class SpeedShop : Shop
+{ 
+    protected override void OnCollisionEnter2D(Collision2D info)
     {
-        if (collisionInfo.collider.CompareTag("Player"))
+        if (info.collider.CompareTag("Player"))
         {
-            if (playerInventory.numberOfMoney >= speedShop.PriceOfUpgrade)
+            if (playerInventory.numberOfMoney >= shopInfoScriptableObject.PriceOfUpgrade)
             {
-                playerInventory.playerSpeed += speedShop.AmountOfUpgrade;
-                playerInventory.numberOfMoney -= speedShop.PriceOfUpgrade;
+                playerInventory.playerSpeed += shopInfoScriptableObject.AmountOfUpgrade;
+                playerInventory.numberOfMoney -= shopInfoScriptableObject.PriceOfUpgrade;
                 gameEvents.OnUpdateCoinCounter.Invoke();
+            }
+
+            if (playerInventory.playerSpeed >= 10000)
+            {
+                gameObject.SetActive(false);
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private InventoryScriptableObject playerInventory;
     [SerializeField] private Text numberOfWood;
     [SerializeField] private Text numberOfMoney;
     [SerializeField] private Text numberOfDamage;

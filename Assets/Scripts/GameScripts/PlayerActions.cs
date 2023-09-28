@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform playerSpriteTransform;
     [SerializeField] private Rigidbody2D playerRigidbody2D;
-    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private InventoryScriptableObject playerInventory;
     [SerializeField] private GameObject inGameMenu;
+    [SerializeField] private GameObject howToPlayMenu;
     private bool isInMenu = false;
     private bool isTurningRight;
     private bool isTurningLeft;
@@ -58,6 +58,7 @@ public class PlayerActions : MonoBehaviour
             inGameMenu.SetActive(false);
             isInMenu = false;
             Cursor.visible = false;
+            howToPlayMenu.SetActive(false);
         }
     }
 

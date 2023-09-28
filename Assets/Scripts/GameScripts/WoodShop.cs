@@ -3,7 +3,7 @@ using UnityEngine;
 public class WoodShop : MonoBehaviour
 {
     [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private InventoryScriptableObject playerInventory;
     private void OnCollisionEnter2D(Collision2D info)
     {
         if (info.collider.CompareTag("Player"))

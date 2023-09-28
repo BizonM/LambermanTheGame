@@ -1,19 +1,15 @@
 using UnityEngine;
 
-public class DamageShop : MonoBehaviour
+public class DamageShop : Shop
 {
-    [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Shop damageShop;
-    [SerializeField] private Inventory playerInventory;
-
-    private void OnCollisionEnter2D(Collision2D info)
+    protected override void OnCollisionEnter2D(Collision2D info)
     {
         if (info.collider.CompareTag("Player"))
         {
-            if (playerInventory.numberOfMoney >= damageShop.PriceOfUpgrade)
+            if (playerInventory.numberOfMoney >= shopInfoScriptableObject.PriceOfUpgrade)
             {
-                playerInventory.playerDamage += damageShop.AmountOfUpgrade;
-                playerInventory.numberOfMoney -= damageShop.PriceOfUpgrade;
+                playerInventory.playerDamage += shopInfoScriptableObject.AmountOfUpgrade;
+                playerInventory.numberOfMoney -= shopInfoScriptableObject.PriceOfUpgrade;
                 gameEvents.OnUpdateDamageCounter.Invoke();
                 gameEvents.OnUpdateCoinCounter.Invoke();
             }

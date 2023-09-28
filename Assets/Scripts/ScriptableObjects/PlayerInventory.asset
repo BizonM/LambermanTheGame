@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837efdfb872f58645adabf71119d99d5, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  numberOfWood: 2
+  numberOfWood: 34
   numberOfMoney: 0
   playerDamage: 1
   playerSpeed: 1000

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private InventoryScriptableObject playerInventory;
     
     private void Awake()
     {

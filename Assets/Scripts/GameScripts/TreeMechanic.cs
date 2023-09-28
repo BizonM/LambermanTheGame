@@ -1,8 +1,8 @@
 using UnityEngine;
-public class TreeMechanic : MonoBehaviour
+public class TreeMechanic : MonoBehaviour, IDamageble<int>, IDestructable
 {
-    [SerializeField] private Inventory playerInventory;
-    [SerializeField] private Tree treeInformation;
+    [SerializeField] private InventoryScriptableObject playerInventory;
+    [SerializeField] private TreeScrtiptableObject treeInformation;
     [SerializeField] private int treeHealth;
     void Start()
     {
@@ -10,15 +10,25 @@ public class TreeMechanic : MonoBehaviour
         gameObject.tag = treeInformation.TreeTag;
     }
 
+    public void TakeDamage(int damageTaken)
+    {
+        treeHealth -= damageTaken;
+    }
+
+    public void Destroy()
+    {
+        if (treeHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if (collisionInfo.collider.CompareTag("Player"))
         {
-            treeHealth -= playerInventory.playerDamage;
-            if (treeHealth <= 0)
-            {
-                gameObject.SetActive(false);
-            }
+           TakeDamage(playerInventory.playerDamage);
+           Destroy();
         }
     }
     
