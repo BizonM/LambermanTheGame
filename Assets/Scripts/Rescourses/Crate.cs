@@ -1,9 +1,9 @@
 using UnityEngine;
 using Random = System.Random;
 
-public class Crate : MonoBehaviour, IDamageble<int>, IDestructable
+public class Crate : MonoBehaviour, IDamageble, IDestructable
 {
-    [SerializeField] private int health = 5;
+    [SerializeField] private int health;
     [SerializeField] private int minWoodGain;
     [SerializeField] private int maxWoodGain;
     [SerializeField] private InventoryScriptableObject playerInventory;
@@ -29,6 +29,6 @@ public class Crate : MonoBehaviour, IDamageble<int>, IDestructable
     private void OnCollisionEnter2D(Collision2D info)
     {
         TakeDamage(playerInventory.playerDamage);
-        gameObject.SetActive(false);
+        Destroy();
     }
 }
