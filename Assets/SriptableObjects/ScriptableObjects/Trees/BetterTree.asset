@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7651e9e300edc04caa0000ef972f820, type: 3}
   m_Name: BetterTree
   m_EditorClassIdentifier: 
-  TreeTag: BetterTree
   TreeHealth: 20
+  WoodMultiplier: 3

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66462fe398c9534cbb87a96312a866a, type: 3}
   m_Name: BorderShop
   m_EditorClassIdentifier: 
-  PriceOfUpgrade: 0
+  PriceOfUpgrade: 20
   AmountOfUpgrade: 0
