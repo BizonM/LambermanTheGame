@@ -24,7 +24,6 @@ public class PlayerActions : MonoBehaviour
         playerInventory.playerDamage = startPlayerInventory.playerDamage;
         playerInventory.playerSpeed = startPlayerInventory.playerSpeed;
     }
-
     void Update()
     {
         if (!isInMenu)
@@ -56,7 +55,6 @@ public class PlayerActions : MonoBehaviour
             howToPlayMenu.SetActive(false);
         }
     }
-    
     void OnCollisionEnter2D(Collision2D info)
     {
         if (info.collider.CompareTag("Tree"))
@@ -68,14 +66,12 @@ public class PlayerActions : MonoBehaviour
             GetWood(betterTree.WoodMultiplier);
         }
     }
-    
     private void RotatePlayer(int rotation)
     {
         var playerRotation = playerTransform.rotation.eulerAngles;
         playerRotation.z = rotation;
         playerTransform.rotation = Quaternion.Euler(playerRotation);
     }
-    
     private void MovePlayer(int rotation)
     {
         playerRigidbody2D.AddForce(playerInventory.playerSpeed * Time.deltaTime * transform.up, ForceMode2D.Force);
@@ -87,7 +83,6 @@ public class PlayerActions : MonoBehaviour
         isInMenu = enablingCursor;
         Cursor.visible = enablingCursor;
     }
-
     private void GetWood(int multiplier)
     {
         playerInventory.numberOfWood += playerInventory.playerDamage * multiplier;
