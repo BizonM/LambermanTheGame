@@ -8462,6 +8462,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1871913851694543848, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
+      propertyPath: tree
+      value: 
+      objectReference: {fileID: 11400000, guid: 7727f90a3cee6b44db26b010d331f2c4, type: 2}
+    - target: {fileID: 1871913851694543848, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
+      propertyPath: betterTree
+      value: 
+      objectReference: {fileID: 11400000, guid: 8959558ab097c004da58ad86c19f39b7, type: 2}
+    - target: {fileID: 1871913851694543848, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
+      propertyPath: gameEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 14319c4ea6fdb8a4ead2b1bab1ebd35b, type: 2}
+    - target: {fileID: 1871913851694543848, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
       propertyPath: inGameMenu
       value: 
       objectReference: {fileID: 1661728943}
@@ -8469,6 +8481,14 @@ PrefabInstance:
       propertyPath: howToPlayMenu
       value: 
       objectReference: {fileID: 1276353473}
+    - target: {fileID: 1871913851694543848, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
+      propertyPath: startPlayerInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: a09709ac5832a3546ac11eb3bd8d95a6, type: 2}
+    - target: {fileID: 3636236191865099441, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
+      propertyPath: startPlayerInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: a09709ac5832a3546ac11eb3bd8d95a6, type: 2}
     - target: {fileID: 4073522838016408540, guid: 1fa284f3227d1bf43bffd4c6a409f0e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -7,7 +7,6 @@ public class TreeMechanic : MonoBehaviour, IDamageble, IDestructable
     void Start()
     {
         treeHealth = treeInformation.TreeHealth;
-        gameObject.tag = treeInformation.TreeTag;
     }
 
     public void TakeDamage(int damageTaken)
