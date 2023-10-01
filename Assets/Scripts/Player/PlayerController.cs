@@ -15,6 +15,7 @@ public class PlayerActions : MonoBehaviour
     private bool isTurningRight;
     private bool isTurningLeft;
     private int playerAngle;
+    
     private void Awake()
     {
         Cursor.visible = false;
