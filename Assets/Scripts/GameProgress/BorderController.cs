@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BordersMechanic : MonoBehaviour
+public class BorderController: MonoBehaviour
 {
     [SerializeField] private GameEvents gameEvents;
     void OnEnable()
@@ -14,6 +14,6 @@ public class BordersMechanic : MonoBehaviour
     }
     void OpenBorders()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

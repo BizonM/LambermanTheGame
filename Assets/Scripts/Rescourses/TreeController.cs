@@ -1,5 +1,5 @@
 using UnityEngine;
-public class TreeMechanic : MonoBehaviour, IDamageble, IDestructable
+public class TreeController: MonoBehaviour, IDamageble, IDestructable
 {
     [SerializeField] private InventoryScriptableObject playerInventory;
     [SerializeField] private TreeScrtiptableObject treeInformation;

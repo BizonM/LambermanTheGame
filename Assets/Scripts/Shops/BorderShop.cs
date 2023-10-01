@@ -1,17 +1,14 @@
 using UnityEngine;
 
-public class BorderShop : MonoBehaviour
+public class BorderShop : Shop
 {
-    [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private InventoryScriptableObject playerInventory;
-    private int moje;
-    private void OnCollisionEnter2D(Collision2D collisionInfo)
+    protected override void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if (collisionInfo.collider.CompareTag("Player"))
         {
-            if (playerInventory.numberOfMoney >= 20)
+            if (playerInventory.numberOfMoney >= shopInfoScriptableObject.PriceOfUpgrade)
             {
-                playerInventory.numberOfMoney -= 20;
+                playerInventory.numberOfMoney -= shopInfoScriptableObject.PriceOfUpgrade;
                 gameEvents.OnOpenBorders.Invoke();
                 gameEvents.OnUpdateCoinCounter.Invoke();
                 gameObject.SetActive(false);

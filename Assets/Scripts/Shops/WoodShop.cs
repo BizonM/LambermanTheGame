@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class WoodShop : MonoBehaviour
+public class WoodShop : Shop
 {
-    [SerializeField] private GameEvents gameEvents;
-    [SerializeField] private InventoryScriptableObject playerInventory;
-    private void OnCollisionEnter2D(Collision2D info)
+    protected override void OnCollisionEnter2D(Collision2D info)
     {
         if (info.collider.CompareTag("Player"))
         {

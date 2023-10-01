@@ -15,9 +15,6 @@ public class PlayerActions : MonoBehaviour
     private bool isTurningRight;
     private bool isTurningLeft;
     private int playerAngle;
-
-    private Vector3 PlayerRotation;
-
     private void Awake()
     {
         Cursor.visible = false;
@@ -59,13 +56,13 @@ public class PlayerActions : MonoBehaviour
         }
     }
     
-    void OnCollisionEnter2D(Collision2D collisionInfo)
+    void OnCollisionEnter2D(Collision2D info)
     {
-        if (collisionInfo.collider.CompareTag("Tree"))
+        if (info.collider.CompareTag("Tree"))
         {
             GetWood(tree.WoodMultiplier);
         }
-        else if (collisionInfo.collider.CompareTag("BetterTree"))
+        else if (info.collider.CompareTag("BetterTree"))
         {
             GetWood(betterTree.WoodMultiplier);
         }
@@ -78,7 +75,7 @@ public class PlayerActions : MonoBehaviour
         playerTransform.rotation = Quaternion.Euler(playerRotation);
     }
     
-    private void MovePlayer(int rotation) // ogarnąć rotację do tego :)
+    private void MovePlayer(int rotation)
     {
         playerRigidbody2D.AddForce(playerInventory.playerSpeed * Time.deltaTime * transform.up, ForceMode2D.Force);
         RotatePlayer(rotation);
@@ -95,6 +92,4 @@ public class PlayerActions : MonoBehaviour
         playerInventory.numberOfWood += playerInventory.playerDamage * multiplier;
         gameEvents.OnUpdateWoodCounter.Invoke();
     }
-    
-    
 }
